@@ -1,0 +1,313 @@
+## Name:   The Go Directory Project - Meta Schema
+## Author: Jesse Coretta <jesse.coretta@icloud.com>
+## Date:   July 21, 2026
+##
+## OID Root: 1.3.6.1.4.1.56521.389.2.44
+## - {iso identified-organization(3) dod(6) internet(1) private(4) enterprise(1) 56521 go-directory(389) schema(2) meta-schema(44)}
+##
+## Inventory
+##
+##  - Attribute Types     (1.3.6.1.4.1.56521.389.2.44.3)
+##  - Object Classes      (1.3.6.1.4.1.56521.389.2.44.5)
+##  - Name Forms          (1.3.6.1.4.1.56521.389.2.44.7)
+##  - DIT Structure Rules (1.3.6.1.4.1.56521.389.2.44.8)
+
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.1 NAME 'metaDefNumericOID'	
+	DESC 'Numeric OID held by a definition'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.2 NAME 'metaDefRuleID'
+	DESC 'Integer identifier of a structure rule'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+	EQUALITY integerMatch
+	ORDERING integerOrderingMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.3 NAME 'metaDefName'
+        DESC 'Name(s) by which a definition is known'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+	EQUALITY caseIgnoreMatch
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.4 NAME 'metaDefDesc'
+	DESC 'Description of a definition'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+	EQUALITY caseIgnoreMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.5 NAME 'metaDefSupC'
+        DESC 'Superior class(es) of a class'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.6 NAME 'metaDefSupR'
+	DESC 'Superior structure rules of a rule'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+	EQUALITY integerMatch
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.7 NAME 'metaDefSupT'
+	DESC 'Superior type of a type'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.8 NAME 'metaDefSyntax'
+	DESC 'Syntax honored by a matching rule or attribute type'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.9 NAME 'metaDefUB'
+	DESC 'Upper bounds of an attribute value'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+	EQUALITY integerMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.10 NAME 'metaDefEquality'
+	DESC 'Equality matching rule honored by an attribute type'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.11 NAME 'metaDefSubstring'
+	DESC 'Substring matching rule honored by an attribute type'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.12 NAME 'metaDefOrdering'
+	DESC 'Ordering matching rule honored by an attribute type'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.13 NAME 'metaDefUsage'
+	DESC 'Classification of an attribute type'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+	EQUALITY caseIgnoreMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.14 NAME 'metaDefMay'
+	DESC 'Optional attribute types permitted by a class, content rule or name form'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.15 NAME 'metaDefMust'
+	DESC 'Mandatory attribute types required by a class, content rule or name form'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.16 NAME 'metaDefNot'
+        DESC 'Forbidden attribute types for a content rule'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.17 NAME 'metaDefAux'
+	DESC 'Auxiliary classes allowed by a content rule'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.18 NAME 'metaDefKind'
+	DESC 'Kind or classification, of a class'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+	EQUALITY integerMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.19 NAME 'metaDefOC'
+	DESC 'Structural class referenced by a name form'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.20 NAME 'metaDefApplies'
+	DESC 'Attribute types which use a particular matching rule'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.21 NAME 'metaDefXDepr'
+	DESC 'Deprecated, non obsolete definition'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+	EQUALITY booleanMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.22 NAME 'metaDefXOrigin'
+	DESC 'Standards document, entity or group from which the definition originates'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+	EQUALITY caseIgnoreMatch
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.23 NAME 'metaDefObsolete'
+	DESC 'Definition is obsolete'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+	EQUALITY booleanMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.24 NAME 'metaDefXNotHuman'
+	DESC 'Syntax is not human readable'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+	EQUALITY booleanMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.25 NAME 'metaDefXPattern'
+	DESC 'Regular expression implemented by a custom syntax'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.40
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.26 NAME 'metaDefSingleValue'
+	DESC 'Attribute type is single-valued'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+	EQUALITY booleanMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.27 NAME 'metaDefNoUserMods'
+	DESC 'Attribute type prohibits user modifications'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+	EQUALITY booleanMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.28 NAME 'metaDefCollective'
+	DESC 'Attribute type is collective'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+	EQUALITY booleanMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.44.3.29 NAME 'metaDefForm'
+	DESC 'Name Form implemented by a DIT Structure Rule'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+	EQUALITY objectIdentifierMatch
+	SINGLE-VALUE
+	NO-USER-MODIFICATION
+	X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.44.5.1 NAME 'metaLDAPSyntax'
+	DESC 'Tokenized abstraction of an LDAP Syntax Description'
+	SUP top
+	STRUCTURAL
+	MUST metaDefNumericOID
+	MAY  ( metaDefDesc 
+             $ metaDefXOrigin
+             $ metaDefXPattern
+	     $ metaDefXNotHuman )
+	X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.44.5.2 NAME 'metaMatchingRule'
+	DESC 'Tokenized abstraction of a Matching Rule'
+	SUP top
+	STRUCTURAL
+	MUST ( metaDefNumericOID
+             $ metaDefSyntax )
+	MAY  ( metaDefName
+             $ metaDefDesc
+             $ metaDefObsolete
+             $ metaDefXOrigin )
+	X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.44.5.3 NAME 'metaAttributeType'
+	DESC 'Tokenized abstraction of a Attribute Type'
+	SUP top
+	STRUCTURAL
+	MUST metaDefNumericOID
+	MAY  ( metaDefName
+             $ metaDefDesc
+             $ metaDefSyntax
+             $ metaDefUB
+             $ metaDefEquality
+             $ metaDefSubstring
+             $ metaDefOrdering
+             $ metaDefUsage
+             $ metaDefSupT
+             $ metaDefObsolete
+             $ metaDefSingleValue
+             $ metaDefNoUserMods
+             $ metaDefCollective
+             $ metaDefXOrigin )
+	X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.44.5.4 NAME 'metaMatchingRuleUse'
+	DESC 'Tokenized abstraction of a Matching Rule Use'
+	SUP top
+	STRUCTURAL
+	MUST metaDefNumericOID
+	MAY  ( metaDefName
+             $ metaDefDesc
+             $ metaDefApplies
+             $ metaDefObsolete
+             $ metaDefXOrigin )
+	X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.44.5.5 NAME 'metaObjectClass'
+	DESC 'Tokenized abstraction of an Object Class'
+	SUP top
+	STRUCTURAL
+	MUST metaDefNumericOID
+	MAY  ( metaDefName
+             $ metaDefDesc
+             $ metaDefMust
+             $ metaDefMay
+             $ metaDefKind
+             $ metaDefSupC
+             $ metaDefObsolete
+             $ metaDefXOrigin )
+	X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.44.5.6 NAME 'metaDITContentRule'
+	DESC 'Tokenized abstraction of a DIT Content Rule'
+	SUP top
+	STRUCTURAL
+	MUST metaDefNumericOID
+	MAY  ( metaDefName
+             $ metaDefDesc
+             $ metaDefAux
+             $ metaDefMust
+             $ metaDefMay
+             $ metaDefNot
+             $ metaDefObsolete
+             $ metaDefXOrigin )
+	X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.44.5.7 NAME 'metaNameForm'
+	DESC 'Tokenized abstraction of a Name Form'
+	SUP top
+	STRUCTURAL
+	MUST ( metaDefNumericOID
+             $ metaDefOC )
+	MAY  ( metaDefName
+             $ metaDefDesc
+             $ metaDefMust
+             $ metaDefMay
+             $ metaDefObsolete
+             $ metaDefXOrigin )
+	X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.44.5.8 NAME 'metaDITStructureRule'
+	DESC 'Tokenized abstraction of a DIT Structure Rule'
+	SUP top
+	STRUCTURAL
+	MUST ( metaDefRuleID
+             $ metaDefForm )
+	MAY  ( metaDefName
+             $ metaDefDesc
+             $ metaDefSupR
+             $ metaDefObsolete
+             $ metaDefXOrigin )
+	X-ORIGIN 'Jesse Coretta' )

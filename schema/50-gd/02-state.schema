@@ -1,0 +1,26 @@
+## Name:   The Go Directory Project - State Schema
+## Author: Jesse Coretta <jesse.coretta@icloud.com>
+## Date:   Aug 19, 2026
+##
+## OID Root: 1.3.6.1.4.1.56521.389.2.60
+## - {iso identified-organization(3) dod(6) internet(1) private(4) enterprise(1) 56521 go-directory(389) schema(2) configuration(60)}
+##
+## Inventory
+##
+##  - Attribute Types     (1.3.6.1.4.1.56521.389.2.60.3)
+##  - Object Classes      (1.3.6.1.4.1.56521.389.2.60.5)
+##  - Name Forms          (1.3.6.1.4.1.56521.389.2.60.7)
+##  - DIT Structure Rules (1.3.6.1.4.1.56521.389.2.60.8)
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.77.3.1 NAME 'dSAIsActive'
+        DESC 'Whether the DSA state is active'
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+        EQUALITY booleanMatch
+        USAGE directoryOperation
+        NO-USER-MODIFICATION
+        X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.77.5.1 NAME 'dSAStateEntry'
+	DESC 'Distinguished name of the state entry'
+        SUP top
+        STRUCTURAL
+        MUST ( cn $ dSAIsActive )
+        X-ORIGIN 'Jesse Coretta' )

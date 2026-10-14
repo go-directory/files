@@ -1,0 +1,288 @@
+## Name:   The Go Directory Project - Monitoring Schema
+## Author: Jesse Coretta <jesse.coretta@icloud.com>
+## Date:   October 13, 2026
+##
+## OID Root: 1.3.6.1.4.1.56521.389.2.31
+## - {iso identified-organization(3) dod(6) internet(1) private(4) enterprise(1) 56521 go-directory(389) schema(2) monitor(31)}
+##
+## Inventory
+##
+##  - Attribute Types     (1.3.6.1.4.1.56521.389.2.31.3)
+##  - Object Classes      (1.3.6.1.4.1.56521.389.2.31.5)
+##  - Name Forms          (1.3.6.1.4.1.56521.389.2.31.7)
+##  - DIT Structure Rules (1.3.6.1.4.1.56521.389.2.31.8)
+
+## 1.3.6.1.4.1.56521.389.2.31.3 (attributeTypes)
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.1 NAME 'monitorDN'
+  DESC 'The DN of the monitoring DIT'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.12
+  EQUALITY distinguishedNameMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.2 NAME 'monitorThreadNumber'
+  DESC 'Unique integer identifier for a thread entry'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+  EQUALITY integerMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.3 NAME 'monitorOpsInit'
+  DESC 'Counter for operations initiated'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+  EQUALITY integerMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.4 NAME 'monitorOpsDone'
+  DESC 'Counter for operations completed'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+  EQUALITY integerMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.5 NAME 'monitorConnectionID'
+  DESC 'Unique integer identifier for a connection'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+  EQUALITY integerMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.6 NAME 'monitorConnectionStartTime'
+  DESC 'Time at which a connection was established'
+  EQUALITY generalizedTimeMatch
+  ORDERING generalizedTimeOrderingMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.24
+  SINGLE-VALUE
+  NO-USER-MODIFICATION
+  USAGE directoryOperation
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.7 NAME 'monitorConnectionLastActive'
+  DESC 'Time at which a connection was most recently active'
+  EQUALITY generalizedTimeMatch
+  ORDERING generalizedTimeOrderingMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.24
+  SINGLE-VALUE
+  NO-USER-MODIFICATION
+  USAGE directoryOperation
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.8 NAME 'monitorConnectionLocalAddr'
+  DESC 'The address and port of the DSA to which a connection was established'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+  EQUALITY caseIgnoreMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.9 NAME 'monitorConnectionRemoteAddr'
+  DESC 'The source address and port of the incoming connection'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+  EQUALITY caseIgnoreMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.10 NAME 'monitorConnectionBindDN'
+  DESC 'The authenticated bind DN of a connection; if absent, bind is anonymous'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.12
+  EQUALITY distinguishedNameMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.11 NAME 'monitorCurrentConnections'
+  DESC 'The number of current connections'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+  EQUALITY integerMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.12 NAME 'monitorTotalConnections'
+  DESC 'The total number of connections established since service start'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+  EQUALITY integerMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.13 NAME 'monitorFailedConnections'
+  DESC 'The total number of connections not successfully established since service start'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+  EQUALITY integerMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.14 NAME 'monitorTLSCertificateFile'
+  DESC 'The local path and filename of a monitored DSA certificate'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+  EQUALITY caseExactMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.15 NAME 'monitorTLSCertificateSubject'
+  DESC 'The X.509 subject distinguished name of a monitored DSA certificate'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+  EQUALITY caseExactMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.16 NAME 'monitorTLSCertificateIssuer'
+  DESC 'The X.509 issuer distinguished name of a monitored DSA certificate'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+  EQUALITY caseExactMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.17 NAME 'monitorTLSCertificateExpirationDays'
+  DESC 'The number of days until (or, if negative, since) expiration for a monitored DSA certificate'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+  EQUALITY integerMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.18 NAME 'monitorTLSCertificateSerial'
+  DESC 'The unique identifier for a monitored DSA certificate'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+  EQUALITY integerMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.19 NAME 'monitorConnectionResultCode'
+  DESC 'The LDAP ResultCode returned following the most recent request sent by the connection'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+  EQUALITY integerMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.20 NAME 'monitorConnectionControl'
+  DESC 'The control(s) submitted for a connection'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.38
+  EQUALITY objectIdentifierMatch
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.21 NAME 'monitorConnectionTLS'
+  DESC 'Whether the connection is TLS encrypted'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+  EQUALITY booleanMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.22 NAME 'monitorConnectionAuthChoice'
+  DESC 'Authentication choice for a connection: SIMPLE or SASL'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+  EQUALITY caseIgnoreMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.31.3.23 NAME 'monitorConnectionSASLMechanism'
+  DESC 'Mechanism for a connection using SASL authentication'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+  EQUALITY caseIgnoreMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
+  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta' )
+
+## 1.3.6.1.4.1.56521.389.2.31.5 (objectClasses)
+objectClasses ( 1.3.6.1.4.1.56521.389.2.31.5.1 NAME 'goDirMonitor'
+  DESC 'The root class of the monitoring DIT'
+  SUP top
+  STRUCTURAL
+  MUST ( cn
+       $ configDSEPath )
+  MAY description
+  X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.31.5.2 NAME 'goDirMonitorThreads'
+  DESC 'Thread monitoring root class'
+  SUP top
+  STRUCTURAL
+  MUST cn
+  MAY description
+  X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.31.5.3 NAME 'goDirMonitorThread'
+  DESC 'Entry for a single thread'
+  SUP top
+  STRUCTURAL
+  MUST cn
+  MAY ( monitorThreadNumber
+      $ description )
+  X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.31.5.4 NAME 'goDirMonitorOperations'
+  DESC 'Operation monitoring root class'
+  SUP top
+  STRUCTURAL
+  MUST cn
+  MAY description
+  X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.31.5.5 NAME 'goDirMonitorOperation'
+  DESC 'Entry of a monitored operation type'
+  SUP top
+  STRUCTURAL
+  MUST ( cn
+       $ monitorOpsInit
+       $ monitorOpsDone )
+  MAY description
+  X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.31.5.6 NAME 'goDirMonitorConnections'
+  DESC 'Connection monitoring root class'
+  SUP top
+  STRUCTURAL
+  MUST ( cn
+       $ monitorCurrentConnections
+       $ monitorFailedConnections
+       $ monitorTotalConnections )
+  MAY description
+  X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.31.5.7 NAME 'goDirMonitorConnection'
+  DESC 'Entry of a monitored connection'
+  SUP top
+  STRUCTURAL
+  MUST ( cn
+       $ monitorConnectionAuthChoice
+       $ monitorConnectionTLS
+       $ monitorConnectionStartTime
+       $ monitorConnectionLastActive
+       $ monitorConnectionID
+       $ monitorConnectionRemoteAddr
+       $ monitorConnectionLocalAddr )
+  MAY ( monitorConnectionSASLMechanism
+      $ monitorConnectionBindDN
+      $ monitorConnectionControl
+      $ monitorConnectionResultCode
+      $ description )
+  X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.31.5.8 NAME 'goDirMonitorCertificates'
+  DESC 'DSA certificate monitoring root class'
+  SUP top
+  STRUCTURAL
+  MUST cn
+  MAY description
+  X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.31.5.9 NAME 'goDirMonitorCertificate'
+  DESC 'Entry of a monitored DSA certificate'
+  SUP top
+  STRUCTURAL
+  MUST ( cn
+       $ monitorTLSCertificateSerial
+       $ monitorTLSCertificateExpirationDays
+       $ monitorTLSCertificateFile
+       $ monitorTLSCertificateIssuer
+       $ monitorTLSCertificateSubject )
+  MAY description
+  X-ORIGIN 'Jesse Coretta' )

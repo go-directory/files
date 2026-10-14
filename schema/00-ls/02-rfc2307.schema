@@ -1,0 +1,2 @@
+ldapSyntaxes ( 1.3.6.1.1.1.0.0 DESC 'nisNetgroupTripleSyntax' X-ORIGIN 'RFC2307' )
+ldapSyntaxes ( 1.3.6.1.1.1.0.1 DESC 'bootParameterSyntax' X-ORIGIN 'RFC2307' )
