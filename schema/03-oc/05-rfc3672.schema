@@ -1,0 +1,5 @@
+objectClasses ( 2.5.17.0 NAME 'subentry'
+  SUP top
+  STRUCTURAL
+  MUST ( cn
+       $ subtreeSpecification ) )
