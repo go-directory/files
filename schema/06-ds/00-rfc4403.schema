@@ -1,0 +1,35 @@
+dITStructureRules ( 1
+  NAME 'uddiBusinessEntityStructureRule'
+  FORM uddiBusinessEntityNameForm )
+dITStructureRules ( 2
+  NAME 'uddiContactStructureRule'
+  FORM uddiContactNameForm
+  SUP ( 1 ) )
+dITStructureRules ( 3
+  NAME 'uddiAddressStructureRule'
+  FORM uddiAddressNameForm
+  SUP ( 2 ) )
+dITStructureRules ( 4
+  NAME 'uddiBusinessServiceStructureRule'
+  FORM uddiBusinessServiceNameForm
+  SUP ( 1 ) )
+dITStructureRules ( 5
+  NAME 'uddiBindingTemplateStructureRule'
+  FORM uddiBindingTemplateNameForm
+  SUP ( 4 ) )
+dITStructureRules ( 6
+  NAME 'uddiTModelInstanceInfoStructureRule'
+  FORM uddiTModelInstanceInfoNameForm
+  SUP ( 5 ) )
+dITStructureRules ( 7
+  NAME 'uddiTModelStructureRule'
+  FORM uddiTModelNameForm )
+dITStructureRules ( 8
+  NAME 'uddiPublisherAssertionStructureRule'
+  FORM uddiPublisherAssertionNameForm )
+dITStructureRules ( 9
+  NAME 'uddiv3SubscriptionStructureRule'
+  FORM uddiv3SubscriptionNameForm )
+dITStructureRules ( 10
+  NAME 'uddiv3EntityObituaryStructureRule'
+  FORM uddiv3EntityObituaryNameForm )

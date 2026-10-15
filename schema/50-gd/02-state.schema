@@ -18,14 +18,16 @@ attributeTypes ( 1.3.6.1.4.1.56521.389.2.77.3.1 NAME 'stateContext'
   SINGLE-VALUE
   USAGE dSAOperation
   NO-USER-MODIFICATION
-  X-ORIGIN 'Jesse Coretta' )
+  X-ORIGIN 'Jesse Coretta'
+  X-DO-NOT-ADVERTISE 'TRUE' )
 attributeTypes ( 1.3.6.1.4.1.56521.389.2.77.3.2 NAME 'stateAvailable'
   DESC 'Whether the DSA is available for general use'
   SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
   EQUALITY booleanMatch
   USAGE directoryOperation
   NO-USER-MODIFICATION
-  X-ORIGIN 'Jesse Coretta' )
+  X-ORIGIN 'Jesse Coretta'
+  X-DO-NOT-ADVERTISE 'TRUE' )
 
 ## 1.3.6.1.4.1.56521.389.2.77.5 (objectClasses)
 objectClasses ( 1.3.6.1.4.1.56521.389.2.77.5.1 NAME 'goDirState'
@@ -34,4 +36,5 @@ objectClasses ( 1.3.6.1.4.1.56521.389.2.77.5.1 NAME 'goDirState'
   STRUCTURAL
   MUST ( cn
        $ stateAvailable )
-  X-ORIGIN 'Jesse Coretta' )
+  X-ORIGIN 'Jesse Coretta'
+  X-DO-NOT-ADVERTISE 'TRUE' )
