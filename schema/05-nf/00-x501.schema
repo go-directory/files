@@ -2,4 +2,6 @@ nameForms ( 2.5.15.16
   NAME 'subentryNameForm'
   DESC 'X.501, cl. 14.2.2: the Subentry name form'
   OC subentry
-  MUST cn )
+  MUST cn
+  X-ORIGIN 'ITU-T Rec. X.501'
+  X-DO-NOT-ADVERTISE 'TRUE' )
