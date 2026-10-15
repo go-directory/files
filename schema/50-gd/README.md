@@ -8,8 +8,8 @@ This section contains information regarding the proprietary extensions used with
 
 ### X-DO-NOT-ADVERTISE
 
-Format: 'qdstrings' (single value only)
-Value:  `BOOLEAN`
+ - Format: 'qdstrings' (single value only)
+ - Value:  `BOOLEAN`
 
 Example:
 
