@@ -33,7 +33,7 @@ Definitions which bear this extension -- _and_ with a single value of `'TRUE'` -
 
 The definition, however, _will_ continue to function normally.
 
-This means that, for example, an unadvertised attribute type can still be specified within a search filter (or compare request) attribute value assertion, and it can still be requested via attribute selection. If it is meant to be modified by the end-user, it can be.
+This means that, for example, an unadvertised attribute type can still be specified within the AVA of a search filter (or compare request), _and_ it can still be requested via attribute selection. Furthermore, if it is meant to be modified by the end-user, it can be. Nothing changes as a result of this feature, functionally speaking.
 
 The benefits of using this extension are simply:
 
