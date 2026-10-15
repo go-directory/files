@@ -1,9 +1,51 @@
 attributeTypes ( 2.5.18.9
-        NAME 'hasSubordinates'
-        DESC 'X.501, cl. 14.4.4: Whether an entry has subordinates'
-        EQUALITY booleanMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
-        SINGLE-VALUE
-        NO-USER-MODIFICATION
-        USAGE directoryOperation
-	X-ORIGIN 'ITU-T Rec. X.501' )
+  NAME 'hasSubordinates'
+  DESC 'X.501, cl. 14.4.4: Whether an entry has subordinates'
+  EQUALITY booleanMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+  SINGLE-VALUE
+  NO-USER-MODIFICATION
+  USAGE directoryOperation
+  X-ORIGIN 'ITU-T Rec. X.501' )
+
+attributeTypes ( 2.5.18.17
+  NAME 'hierarchyLevel'
+  DESC 'X.501, cl. 14.10: The logical depth of an hierarchical group member entry'
+  EQUALITY integerMatch
+  ORDERING integerOrderingMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+  SINGLE-VALUE
+  NO-USER-MODIFICATION
+  USAGE directoryOperation
+  X-ORIGIN 'ITU-T Rec. X.501' )
+
+attributeTypes ( 2.5.18.18
+  NAME 'hierarchyBelow'
+  DESC 'X.501, cl. 14.10: Whether the hierarchical group member entry has any children'
+  EQUALITY booleanMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+  SINGLE-VALUE
+  NO-USER-MODIFICATION
+  USAGE directoryOperation
+  X-ORIGIN 'ITU-T Rec. X.501' )
+
+attributeTypes ( 2.5.18.19
+  NAME 'hierarchyParent'
+  DESC 'X.501, cl. 14.10: The distinguished name of the parent entry of the hierarchical child'
+  EQUALITY distinguishedNameMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.12
+  SINGLE-VALUE
+  NO-USER-MODIFICATION
+  USAGE directoryOperation
+  X-ORIGIN 'ITU-T Rec. X.501' )
+
+attributeTypes ( 2.5.18.20
+  NAME 'hierarchyTop'
+  DESC 'X.501, cl. 14.10: The distinguished name of entry residing at the top (root) of the hierarchical group structure'
+  EQUALITY distinguishedNameMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.12
+  SINGLE-VALUE
+  NO-USER-MODIFICATION
+  USAGE directoryOperation
+  X-ORIGIN 'ITU-T Rec. X.501' )
+
