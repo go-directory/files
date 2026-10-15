@@ -49,3 +49,12 @@ attributeTypes ( 2.5.18.20
   USAGE directoryOperation
   X-ORIGIN 'ITU-T Rec. X.501' )
 
+attributeTypes ( 2.5.18.??
+  NAME 'dseType'
+  DESC 'X.501, cl. 23.4.2: The particular purpose or role of a DSE'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.20
+  EQUALITY bitStringMatch
+  SINGLE-VALUE
+  NO-USER-MODIFICATION
+  USAGE dSAOperation
+  X-ORIGIN 'ITU-T Rec. X.501' )
