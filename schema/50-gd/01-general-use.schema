@@ -1,0 +1,13 @@
+objectClasses ( 1.3.6.1.4.1.56521.389.2.8.5.1 NAME 'goDirectoryRootDSE'
+        DESC 'Go Directory root vertex entry'
+        SUP top
+        STRUCTURAL
+        MAY cn
+        X-ORIGIN 'Jesse Coretta' )
+objectClasses ( 1.3.6.1.4.1.56521.389.2.8.5.2 NAME 'goDirectoryMetaSchema'
+        DESC 'Structural class of the meta schema root entry'
+        SUP top
+        STRUCTURAL
+        MUST ou
+        X-ORIGIN 'Jesse Coretta' )
+
