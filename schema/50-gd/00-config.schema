@@ -61,7 +61,6 @@ attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.2 NAME 'configSchemaDN'
   EQUALITY distinguishedNameMatch
   SINGLE-VALUE
   USAGE dSAOperation
-  NO-USER-MODIFICATION
   X-ORIGIN 'Jesse Coretta'
   X-DO-NOT-ADVERTISE 'TRUE' )
 attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.3 NAME 'configTLSListenerCert'
@@ -96,7 +95,6 @@ attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.7 NAME 'configDITType'
   EQUALITY integerMatch
   SINGLE-VALUE
   USAGE dSAOperation
-  NO-USER-MODIFICATION
   X-ORIGIN 'Jesse Coretta'
   X-DO-NOT-ADVERTISE 'TRUE' )
 attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.8 NAME 'configDITSuffix'
@@ -105,7 +103,6 @@ attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.8 NAME 'configDITSuffix'
   EQUALITY distinguishedNameMatch
   SINGLE-VALUE
   USAGE dSAOperation
-  NO-USER-MODIFICATION
   X-ORIGIN 'Jesse Coretta'
   X-DO-NOT-ADVERTISE 'TRUE' )
 attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.9 NAME 'configGlueParentSuffix'
@@ -283,7 +280,6 @@ attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.31 NAME 'configSizeLimit'
   EQUALITY integerMatch
   SINGLE-VALUE
   USAGE dSAOperation
-  NO-USER-MODIFICATION
   X-ORIGIN 'Jesse Coretta'
   X-DO-NOT-ADVERTISE 'TRUE' )
 attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.32 NAME 'configTimeLimit'
@@ -292,7 +288,6 @@ attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.32 NAME 'configTimeLimit'
   EQUALITY integerMatch
   SINGLE-VALUE
   USAGE dSAOperation
-  NO-USER-MODIFICATION
   X-ORIGIN 'Jesse Coretta'
   X-DO-NOT-ADVERTISE 'TRUE' )
 attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.33 NAME 'configDataDir'
@@ -301,7 +296,6 @@ attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.33 NAME 'configDataDir'
   EQUALITY caseExactMatch
   SINGLE-VALUE
   USAGE dSAOperation
-  NO-USER-MODIFICATION
   X-ORIGIN 'Jesse Coretta'
   X-DO-NOT-ADVERTISE 'TRUE' )
 attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.34 NAME 'configDITName'
@@ -310,7 +304,6 @@ attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.34 NAME 'configDITName'
   EQUALITY caseIgnoreMatch
   SINGLE-VALUE
   USAGE dSAOperation
-  NO-USER-MODIFICATION
   X-ORIGIN 'Jesse Coretta'
   X-DO-NOT-ADVERTISE 'TRUE' )
 attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.35 NAME 'configDBNoSync'
@@ -319,7 +312,6 @@ attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.35 NAME 'configDBNoSync'
   EQUALITY booleanMatch
   SINGLE-VALUE
   USAGE dSAOperation
-  NO-USER-MODIFICATION
   X-ORIGIN 'Jesse Coretta'
   X-DO-NOT-ADVERTISE 'TRUE' )
 attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.36 NAME 'configDataFileMode'
@@ -328,7 +320,6 @@ attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.36 NAME 'configDataFileMode'
   EQUALITY caseIgnoreMatch
   SINGLE-VALUE
   USAGE dSAOperation
-  NO-USER-MODIFICATION
   X-ORIGIN 'Jesse Coretta'
   X-DO-NOT-ADVERTISE 'TRUE' )
 attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.37 NAME 'configReadOnly'
@@ -337,7 +328,14 @@ attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.37 NAME 'configReadOnly'
   EQUALITY booleanMatch
   SINGLE-VALUE
   USAGE dSAOperation
-  NO-USER-MODIFICATION
+  X-ORIGIN 'Jesse Coretta'
+  X-DO-NOT-ADVERTISE 'TRUE' )
+attributeTypes ( 1.3.6.1.4.1.56521.389.2.60.3.38 NAME 'configSubordinatesPolicy'
+  DESC 'Disclosure of subordinates info: 0=both, 1=numSub, 2=hasSub'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
+  EQUALITY integerMatch
+  SINGLE-VALUE
+  USAGE dSAOperation
   X-ORIGIN 'Jesse Coretta'
   X-DO-NOT-ADVERTISE 'TRUE' )
 
